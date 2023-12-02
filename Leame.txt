@@ -1,0 +1,18 @@
+Ejercicio  Educativo1.1
+ El archivo educacion.sql  contiene el export de la base, se debe crear previamente, para poder usar.
+Se pretende gestionar un proceso educativo con las siguientes características:
+
+Controlar la información del personal, profesores, estudiantes y los centros educativos.
+Del personal, los profesores y los estudiantes queremos almacenar información sobre su Nombre completo, dirección y teléfono. Además de los profesores y del personal almacenaremos su salario y su formación. De los profesores queremos saber su especialidad. De los estudiantes queremos saber en qué curso está matriculado. Del personal queremos almacenar su puesto. De los centros queremos almacenar su nombre, dirección, localidad y teléfono. La tabla curso contiene información sobre: Nombre, profesor que la imparte. La tabla de las notas contiene información sobre alumno, curso y nota.  Ingresar a cada tabla creada, 10 datos con el uso de formularios ya existentes en el zip..
+
+Sobre lo expuesto especificar las sentencias SQL siguientes:
+1.	Revisar y crear y /o adecuar los formularios con la opción de modificar datos 
+	de las diferentes tablas.
+2.	Realizar cambios de fondos de pantalla y manejo de diferentes colores en cada formulario o tipo.
+3.	Crear otras cuatro (5) consultas libres con manejo de botones o menu de opciones
+	pero que muestren los datos insertados o informes de los mismos.
+
+
+Las entregas están divididas en dos partes
+Avance 25 de noviembre de 2023
+Final  2 de diciembre de 2023
