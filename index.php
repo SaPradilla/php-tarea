@@ -2,20 +2,38 @@
 <html>
 	<head>
 		<title>Estudiantes</title>
+		<link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
 		<div>
-			<table align="center">
-				<h1 align="center">Estudiantes</h1>
-				<BR>
-				<tr><td><input type="button" name="alumno" value="Alumno" onclick="window.location.href='alumnos/lista_alumnos.php'"></td>
-				<td><input type="button" name="centros" value="Centros" onclick="window.location.href='centros/lista_centros.php'"></td>
-				<td><input type="button" name="cursos" value="Cursos" onclick="window.location.href='cursos/lista_cursos.php'"></td>
-				<td><input type="button" name="notas" value="Notas" onclick="window.location.href='notas/lista_notas.php'"></td>
-				<td><input type="button" name="personal" value="Personal" onclick="window.location.href='personal/lista_personal.php'"></td>
-				<td><input type="button" name="profesor" value="Profesor" onclick="window.location.href='profesores/lista_profesores.php'"></td></tr>
-				
-			</table>
+			<h1 class="text-principal" >Estudiantes</h1>
+
+			<div class="tabla-crud">
+				<div class="card estudiantes " onclick="window.location.href='alumnos/lista_alumnos.php'">
+					<!-- <img src="./img/estudiantes.jpg" alt="" srcset=""> -->
+					<p>Estudiantes</p>
+				</div>
+				<div class="card centros" onclick="window.location.href='centros/lista_centros.php'">
+					
+					<p>Centros</p>
+					
+				</div>
+				<div class="card cursos" onclick="window.location.href='cursos/lista_cursos.php'">
+
+					<p>Cursos</p>
+				</div>
+				<div class="card notas"  onclick="window.location.href='notas/lista_notas.php'">
+					
+					<p>Notas</p>
+				</div>
+				<div class="card personal" onclick="window.location.href='personal/lista_personal.php'">
+
+					<p>Personal</p>
+				</div>
+				<div class="card profesor"  onclick="window.location.href='profesores/lista_profesores.php'" >
+					<p>Profesores</p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

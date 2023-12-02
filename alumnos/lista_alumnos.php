@@ -2,18 +2,21 @@
 <html>
 	<head>
 		<title>Lista De Alumnos</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 
-
-		<div>
-			<table border="1">
-					<td><label>X</label></td>
-					<td><label>Codigo</label>
-					<td><label>Nombre</label></td>
-					<td><label>Telefono</label></td>
-					<td><label>Direccion</label></td>
-					<td><label>Codigo Curso</label></td></tr>
+		
+		<div class="contenedor-tablas">
+			<h1>Estudiantes</h1>
+			<table >
+					<td class="titulos"><label>X</label></td>
+					<td class="titulos"><label>Codigo</label>
+					<td class="titulos"><label>Nombre</label></td>
+					<td class="titulos"><label>Telefono</label></td>
+					<td class="titulos"><label>Direccion</label></td>
+					<td class="titulos"><label>Codigo Curso</label></td></tr>
 
 					<?php
 
@@ -33,10 +36,11 @@
 						}
 					?>
 			</table>
-			<input type="button" name="insert" value="Insertar" onclick="window.location.href='insertar_alumnos.php'">
-			<input type="button" name="delete" value="Eliminar" onclick="window.location.href='borrar_alumnos.php'">
-			<!-- <input type="button" name="update" value="Editar" onclick="window.location.href='actualizar_alumnos.php'"> -->
-			<input type="button" name="volver" value="Volver" onclick="window.location.href='../index.php'">
+			<div class="botones">
+				<input type="button" name="insert" value="Insertar" onclick="window.location.href='insertar_alumnos.php'">
+				<input type="button" name="delete" value="Eliminar" onclick="window.location.href='borrar_alumnos.php'">
+				<input type="button" name="volver" value="Volver" onclick="window.location.href='../index.php'">
+			</div>
 		</div>
 	</body>
 </html>

@@ -101,7 +101,7 @@
 
 			$query= "INSERT INTO personal (Cod_per,Nom_com,Tlf_per,Direccion,Puesto_per,salario_per,Formacion,Ca_cif) VALUES ($cod_per,'$nom_com',$tlf_per,'$direccion','$puesto_per',$salario_per,'$formacion',$ca_cif)";
 
-			mysqli_query($link,$query) or die 
+			mysqli_query($link,$query) or die
 			("<P><center><b>No se pudo insertar informacion</b><br><A HREF='insertar_personal.php'>Volver</A></center></P>");
 		 
         	echo "<P>[ <A HREF='insertar_personal.php'>Insertar Otro Personal</A> ]</P>\n";
@@ -216,7 +216,7 @@
 						<td><select name="ca_cif">
 
 							<?php
-								require ('conexion.php');
+								require ('../conexion.php');
 								$query= "SELECT * FROM centros ORDER BY CIF";
 								$resultado= mysqli_query($link,$query);
 

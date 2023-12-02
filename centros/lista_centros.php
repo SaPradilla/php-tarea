@@ -2,11 +2,13 @@
 <html>
 	<head>
 		<title>Lista De Centros</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 
 
-		<div>
+		<div class="contenedor-tablas">
 			<table border="1">
 					<td><label>X</label></td>
 					<td><label>Nombre</label></td>

@@ -1,11 +1,79 @@
 /* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+	font-family: 'Montserrat', sans-serif;
 
+}
 body {
 	margin: auto;
 	height: 500px;
 	padding: 20px;
+	background-color: whitesmoke;
 }
 
+.text-principal{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 3em;
+
+}
+div.tabla-crud{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	gap: 30px;
+}
+div.card{
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 300px;
+	width: 260px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease;
+	z-index: 99;
+	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+	border-radius: 12px;
+	cursor: pointer;
+}
+.estudiantes{
+	background-image: url('../img/estudiantes.jpg');
+}
+.centros{
+	background-image: url('../img/centro.jpg');
+
+}
+.cursos{
+	background-image: url('../img/cursos.jpg');
+}
+.notas{
+	background-image: url('../img/notas.png');
+}
+.personal{
+	background-image: url('../img/personal.jpg');
+}
+.profesor{
+	background-image: url('../img/profesores.jpg');
+}
+div.card:hover{
+	transform: translateY(-5px);
+	filter: brightness(50%) blur(1px);
+
+}
+.card img{
+	height: 100px;
+	width: 100px;
+}
+.card p{
+	color: white;
+	font-size: 1.5em;
+	position: absolute;
+	z-index: 100;
+}
 #header {
 	width: 700px;
 	color: maroon;
@@ -20,4 +88,40 @@ body {
 	margin-top: 20px;
 	color: #336699;
 	padding-top: 10px;	
+}
+
+.contenedor-tablas{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+.contenedor-tablas h1{
+	text-align: center;
+}
+table{
+	text-align: center;
+    border:1px solid #e4e4e4;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 60vh;
+    table-layout: fixed;
+}
+table tr{
+	border: 1px solid #ccc;
+    padding: 4px;
+}
+table thead{
+	background-color: #2E2E2E;
+    color: white;
+    font-size: 1.5em;
+}
+
+table th{
+	font-size: 1.6em;
+	background-color: red;
+    padding: 10px;
+    text-align: center;
 }

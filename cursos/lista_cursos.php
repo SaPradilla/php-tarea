@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="../css/style.css">
 		<title>Lista De Cursos</title>
 	</head>
 	<body>
-
-
-		<div>
-			<table border="1">
+		<div class="contenedor-tablas">
+			<table >
 					<td><label>X</label></td>
 					<td><label>Nombre Del Curso</label></td>
 					<td><label>Codigo Del Curso</label></td>

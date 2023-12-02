@@ -21,7 +21,7 @@
 						<tr><td>Nombre: </td>
 						<td><input type="name" name="nombre" value="<?= $row['Nombre']?>">
 						</td></tr>
- 
+
 						<tr><td>Telefono: </td>
 						<td><input type="name" name="tlf_cent" value="<?= $row['Tlf_cent']?>">
 
@@ -30,7 +30,7 @@
 						<tr><td>Direccion: </td>
 						<td><input type="name" name="direccion"  value="<?= $row['Direccion']?>">
 						</td></tr>
-                        
+
 						<tr><td>Localidad: </td>
 						<td><input type="name" name="localidad"  value="<?= $row['Localidad']?>">
 						</td></tr>

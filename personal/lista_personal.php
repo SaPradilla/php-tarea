@@ -2,20 +2,21 @@
 <html>
 	<head>
 		<title>Lista De Personal</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
-
-
-		<div>
+		<div class="contenedor-tablas">
 			<table border="1">
-				<tr align="center"><td><label>Codigo</label></td>
-					<td><label>Nombre</label></td>
-					<td><label>Telefono</label></td>
-					<td><label>Direccion</label></td>
-					<td><label>Puesto</label></td>
-					<td><label>Salario</label></td>
-					<td><label>Formacion</label></td>
-					<td><label>CIF</label></td></tr>
+				<td><label>X</label></td>
+				<td><label>Codigo</label></td>
+				<td><label>Nombre</label></td>
+				<td><label>Telefono</label></td>
+				<td><label>Direccion</label></td>
+				<td><label>Puesto</label></td>
+				<td><label>Salario</label></td>
+				<td><label>Formacion</label></td>
+				<td><label>CIF</label></td></tr>
 
 					<?php
 
@@ -24,7 +25,8 @@
 						$resultado=mysqli_query($link,$query);
 
 						while ($extraido= mysqli_fetch_array($resultado)) {
-							echo "<tr align='center'><td>".$extraido['Cod_per']."</td>";
+							echo "<tr align='center'> <td><a href='update_personal.php?id=" . $extraido['Cod_per'] . "'>Editar</a></td>";;
+							echo "<td>".$extraido['Cod_per']."</td>";
 							echo "<td>".$extraido['Nom_com']."</td>";
 							echo "<td>".$extraido['Tlf_per']."</td>";
 							echo "<td>".$extraido['Direccion']."</td>";
