@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Actualizar Cursos</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -12,9 +14,9 @@
             $row = mysqli_fetch_array($resultado);
 
 		?>
-			<div>
-				<h2>Actualizar Curso</h2>
 				<form method="POST" action="actualizar_cursos.php">
+				<div class="contenedor-crear">
+				<h1>Actualizar Curso</h1>
                     <input type="hidden" name="id" value="<?= $row['Id_curso'] ?>">
 					<table>
 						<tr><td>Nombre: </td>
@@ -33,10 +35,14 @@
 					
 
 					</table>
-					<input type="submit" name="submit" value="Actualizar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_cursos.php'">
-				</form>
-			</div>
+					<div class="botones">
+						<input type="submit" class="insert" name="submit" value="Actualizar">
+						<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_cursos.php'">
+					</div>
+
+
+				</div>
+			</form>
 		<?php
 		
 		?>

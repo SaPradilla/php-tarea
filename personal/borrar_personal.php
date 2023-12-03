@@ -2,6 +2,8 @@
 	<html>
 	<head>
 		<title>Borrar Personal</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -27,36 +29,41 @@
 
 		<div>
 			<form method="POST" action="borrar_personal.php">
-				<table border="1">
-					<tr align="center"><td>X</td>
-					<td>Codigo</td>
-					<td>Nombre</td>
-					<td>Telefono</td>
-					<td>Direccion</td>
-					<td>Puesto</td>
-					<td>Salario</td>
-					<td>Formacion</td>
-					<td>CIF</td></tr>
-						<?php 
-							require('../conexion.php');
-							$query="SELECT * FROM personal ORDER BY Cod_per";
-							$resultado= mysqli_query($link,$query);
-
-							while ($extraido=mysqli_fetch_array($resultado)) {
-								echo "<tr align='center'> <td><input type='CHECKBOX' name='borrar[]' value='".$extraido['Cod_per']."'></td>";
-								echo "<td>".$extraido['Cod_per']."</td>";
-								echo "<td>".$extraido['Nom_com']."</td>";
-								echo "<td>".$extraido['Tlf_per']."</td>";
-								echo "<td>".$extraido['Direccion']."</td>";
-								echo "<td>".$extraido['Puesto_per']."</td>";
-								echo "<td>".$extraido['Salario_per']."</td>";
-								echo "<td>".$extraido['Formacion']."</td>";
-								echo "<td>".$extraido['Ca_CIF']."</td></tr>";
-							}
-						?>
-				</table>
-				<input type="submit" name="eliminar" value="Eliminar">
-				<input type="button" name="back" value="Volver" onclick="window.location.href='lista_personal.php'">
+				<div class="contenedor-tablas">
+					<h1>Personal</h1>					
+					<table>
+						<td class="titulos">X</td>
+						<td class="titulos">Codigo</td>
+						<td class="titulos">Nombre</td>
+						<td class="titulos">Telefono</td>
+						<td class="titulos">Direccion</td>
+						<td class="titulos">Puesto</td>
+						<td class="titulos">Salario</td>
+						<td class="titulos">Formacion</td>
+						<td class="titulos">CIF</td>
+							<?php 
+								require('../conexion.php');
+								$query="SELECT * FROM personal ORDER BY Cod_per";
+								$resultado= mysqli_query($link,$query);
+	
+								while ($extraido=mysqli_fetch_array($resultado)) {
+									echo "<tr align='center'> <td><input type='CHECKBOX' name='borrar[]' value='".$extraido['Cod_per']."'></td>";
+									echo "<td>".$extraido['Cod_per']."</td>";
+									echo "<td>".$extraido['Nom_com']."</td>";
+									echo "<td>".$extraido['Tlf_per']."</td>";
+									echo "<td>".$extraido['Direccion']."</td>";
+									echo "<td>".$extraido['Puesto_per']."</td>";
+									echo "<td>".$extraido['Salario_per']."</td>";
+									echo "<td>".$extraido['Formacion']."</td>";
+									echo "<td>".$extraido['Ca_CIF']."</td></tr>";
+								}
+							?>
+					</table>
+					<div class="botones">
+						<input type="submit" class="delete" name="eliminar" value="Eliminar">
+						<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_personal.php'">
+					</div>
+				</div>
 			</form>
 		</div>
 		<?php 

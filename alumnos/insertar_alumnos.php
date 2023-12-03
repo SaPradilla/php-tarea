@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Insertar Alumnos</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -87,84 +89,90 @@
 		{
 		?>
 			<div>
-				<h2>Insertar Alumno</h2>
 				<form method="POST" action="insertar_alumnos.php">
-					<table>
+					<div class="contenedor-crear">
+						
+						<h1>Insertar Alumno</h1>
+						<table>
+	
+							<tr><td>Codigo: </td>
+							<td><input type="name" name="cod_alum"
+	
+								<?php
+	
+									if(isset($_POST['submit']))
+										print("value= '$cod_alum'>");
+									else
+										print(">");
+									if($errores["codigo"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["codigo"]."</SPAN>");
+								?>
+							</td></tr>
+	
+							<tr><td>Nombre: </td>
+							<td><input type="name" name="nom_com_alu"
+	
+								<?php
+	
+									if(isset($_POST['submit']))
+										print("value= '$nom_com_alu'>");
+									else
+										print(">");
+									if($errores["nombre"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["nombre"]."</SPAN>");
+								?>
+							</td></tr>
+	
+							<tr><td>Telefono: </td>
+							<td><input type="name" name="tlf_alum"
+	
+								<?php
+	
+									if(isset($_POST['submit']))
+										print("value= '$tlf_alum'>");
+									else
+										print(">");
+									if($errores["telefono"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["telefono"]."</SPAN>");
+								?>
+							</td></tr>
+	
+							<tr><td>Direccion: </td>
+							<td><input type="name" name="direc_alum"
+	
+								<?php
+	
+									if(isset($_POST['submit']))
+										print("value= '$direc_alum'>");
+									else
+										print(">");
+									if($errores["direccion"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["direccion"]."</SPAN>");
+								?>
+							</td></tr>
+	
+							<tr><td>Codigo De Curso: </td>
+							<td><select name="ca_cod_curso">
+	
+								<?php
+									require ('../conexion.php');
+									$query= "SELECT * FROM cursos ORDER BY Cod_curso";
+									$resultado= mysqli_query($link,$query);
+	
+									while($extraido= mysqli_fetch_array($resultado))
+									{
+										echo "<option value='$extraido[Cod_curso]'>$extraido[Cod_curso]</option>";
+									}
+								?>
+								</select></td></tr>
+	
+						</table>
 
-						<tr><td>Codigo: </td>
-						<td><input type="name" name="cod_alum"
-
-							<?php
-
-								if(isset($_POST['submit']))
-									print("value= '$cod_alum'>");
-								else
-									print(">");
-								if($errores["codigo"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["codigo"]."</SPAN>");
-							?>
-						</td></tr>
-
-						<tr><td>Nombre: </td>
-						<td><input type="name" name="nom_com_alu"
-
-							<?php
-
-								if(isset($_POST['submit']))
-									print("value= '$nom_com_alu'>");
-								else
-									print(">");
-								if($errores["nombre"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["nombre"]."</SPAN>");
-							?>
-						</td></tr>
-
-						<tr><td>Telefono: </td>
-						<td><input type="name" name="tlf_alum"
-
-							<?php
-
-								if(isset($_POST['submit']))
-									print("value= '$tlf_alum'>");
-								else
-									print(">");
-								if($errores["telefono"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["telefono"]."</SPAN>");
-							?>
-						</td></tr>
-
-						<tr><td>Direccion: </td>
-						<td><input type="name" name="direc_alum"
-
-							<?php
-
-								if(isset($_POST['submit']))
-									print("value= '$direc_alum'>");
-								else
-									print(">");
-								if($errores["direccion"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["direccion"]."</SPAN>");
-							?>
-						</td></tr>
-
-						<tr><td>Codigo De Curso: </td>
-						<td><select name="ca_cod_curso">
-
-							<?php
-								require ('conexion.php');
-								$query= "SELECT * FROM cursos ORDER BY Cod_curso";
-								$resultado= mysqli_query($link,$query);
-
-								while($extraido= mysqli_fetch_array($resultado))
-								{
-									echo "<option value='$extraido[Cod_curso]'>$extraido[Cod_curso]</option>";
-								}
-							?>
-							</select></td></tr>
-
-					</table>
-					<input type="submit" name="submit" value="Insertar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_alumnos.php'">
+						<div class="botones">
+							<input type="submit" class="insert" name="submit" value="Insertar">
+							<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_alumnos.php'">
+						</div>
+					</div>
 				</form>
 			</div>
 		<?php

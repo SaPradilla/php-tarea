@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Actualizar Alumnos</title>
+		<link rel="stylesheet" href="../css/style.css">
+		
 	</head>
 	<body>
 		<?php
@@ -14,9 +16,9 @@
             $row = mysqli_fetch_array($resultado);
 
 		?>
-			<div>
-				<h2>Actualizar Alumno</h2>
-				<form method="POST" action="actualizar_alumnos.php">
+			<form method="POST" action="actualizar_alumnos.php">
+				<div class="contenedor-crear">
+					<h1>Actualizar Alumno</h1>
                     <input type="hidden" name="id" value="<?= $row['Cod_alum'] ?>">
 					<table>
 						<tr><td>Codigo: </td>
@@ -52,16 +54,18 @@
 
 								while($extraido= mysqli_fetch_array($resultado))
 								{
-									echo "<option value='$extraido[Cod_curso]'>$extram ido[Cod_curso]</option>";
+									echo "<option value='$extraido[Cod_curso]'>$extraido[Cod_curso]</option>";
 								}
 							?>
 							</select></td></tr>
 
 					</table>
-					<input type="submit" name="submit" value="Actualizar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_alumnos.php'">
-				</form>
-			</div>
+					<div class="botones">
+						<input type="submit" class="insert" name="submit" value="Actualizar">
+						<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_alumnos.php'">
+					</div>
+				</div>
+			</form>
 		<?php
 		
 		?>

@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Actualizar Centros</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -13,9 +15,9 @@
             $row = mysqli_fetch_array($resultado);
 
 		?>
-			<div>
-				<h2>Actualizar Centro</h2>
-				<form method="POST" action="actualizar_centros.php">
+			<form method="POST" action="actualizar_centros.php">
+				<div class="contenedor-crear">
+					<h1>Actualizar Centro</h1>
                     <input type="hidden" name="id" value="<?= $row['CIF'] ?>">
 					<table>
 						<tr><td>Nombre: </td>
@@ -39,10 +41,13 @@
 						</td></tr>
 
 					</table>
-					<input type="submit" name="submit" value="Actualizar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_centros.php'">
-				</form>
-			</div>
+					<div class="botones">
+						<input type="submit" class="insert" name="submit" value="Actualizar">
+						<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_centros.php'">
+					</div>
+
+				</div>
+			</form>
 		<?php
 		
 		?>

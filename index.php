@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Estudiantes</title>
+		<title>Educacion</title>
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-		<div>
-			<h1 class="text-principal" >Estudiantes</h1>
+		<div class="contenedor">
+			
+			<h1 class="text-principal" >Educación</h1>
 
 			<div class="tabla-crud">
 				<div class="card estudiantes " onclick="window.location.href='alumnos/lista_alumnos.php'">
 					<!-- <img src="./img/estudiantes.jpg" alt="" srcset=""> -->
 					<p>Estudiantes</p>
 				</div>
+				<!-- <p>Ver Estadisticas de Notas</p> -->
 				<div class="card centros" onclick="window.location.href='centros/lista_centros.php'">
 					
 					<p>Centros</p>

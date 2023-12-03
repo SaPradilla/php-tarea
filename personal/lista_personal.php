@@ -7,16 +7,17 @@
 	</head>
 	<body>
 		<div class="contenedor-tablas">
-			<table border="1">
-				<td><label>X</label></td>
-				<td><label>Codigo</label></td>
-				<td><label>Nombre</label></td>
-				<td><label>Telefono</label></td>
-				<td><label>Direccion</label></td>
-				<td><label>Puesto</label></td>
-				<td><label>Salario</label></td>
-				<td><label>Formacion</label></td>
-				<td><label>CIF</label></td></tr>
+			<h1>Personal</h1>
+			<table>
+				<td class="titulos"><label>X</label></td>
+				<td class="titulos"><label>Codigo</label></td>
+				<td class="titulos"><label>Nombre</label></td>
+				<td class="titulos"><label>Telefono</label></td>
+				<td class="titulos"><label>Direccion</label></td>
+				<td class="titulos"><label>Puesto</label></td>
+				<td class="titulos"><label>Salario</label></td>
+				<td class="titulos"><label>Formacion</label></td>
+				<td class="titulos"><label>CIF</label></td></tr>
 
 					<?php
 
@@ -25,7 +26,9 @@
 						$resultado=mysqli_query($link,$query);
 
 						while ($extraido= mysqli_fetch_array($resultado)) {
-							echo "<tr align='center'> <td><a href='update_personal.php?id=" . $extraido['Cod_per'] . "'>Editar</a></td>";;
+
+							echo "<tr align='center'> <td><a href='update_personal.php?id=" . $extraido['Cod_per'] . "'> <img src='../img/edit.svg' alt='edit'> </a></td>";
+
 							echo "<td>".$extraido['Cod_per']."</td>";
 							echo "<td>".$extraido['Nom_com']."</td>";
 							echo "<td>".$extraido['Tlf_per']."</td>";
@@ -37,9 +40,11 @@
 						}
 					?>
 			</table>
-			<input type="button" name="insert" value="Insertar" onclick="window.location.href='insertar_personal.php'">
-			<input type="button" name="delete" value="Eliminar" onclick="window.location.href='borrar_personal.php'">
-			<input type="button" name="volver" value="Volver" onclick="window.location.href='../index.php'">
+			<div class="botones">
+				<input type="button" class="insert" name="insert" value="Insertar" onclick="window.location.href='insertar_personal.php'">
+				<input type="button" class="delete" name="delete" value="Eliminar" onclick="window.location.href='borrar_personal.php'">
+				<input type="button" class="volver" name="volver" value="Volver" onclick="window.location.href='../index.php'">
+			</div>
 		</div>
 	</body>
 </html>

@@ -6,16 +6,26 @@
 }
 body {
 	margin: auto;
-	height: 500px;
+	height: 100vh;
 	padding: 20px;
-	background-color: whitesmoke;
+	background-color: rgb(238, 239, 240)
+	
 }
+.contenedor{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	height: 100%;
 
+
+}
 .text-principal{
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 3em;
+	
 
 }
 div.tabla-crud{
@@ -30,12 +40,11 @@ div.card{
 	background-size: cover;
 	height: 300px;
 	width: 260px;
-	background-color: red;
+	/* background-color: red; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	transition: all 0.2s ease;
-	z-index: 99;
 	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 	border-radius: 12px;
 	cursor: pointer;
@@ -90,33 +99,39 @@ div.card:hover{
 	padding-top: 10px;	
 }
 
-.contenedor-tablas{
+.contenedor-tablas,.contenedor-crear {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
 }
-.contenedor-tablas h1{
+.contenedor-tablas,.contenedor-crear  h1{
 	text-align: center;
 }
 table{
 	text-align: center;
     border:1px solid #e4e4e4;
     border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    width: 60vh;
+    width: 100vw;
     table-layout: fixed;
+	height: max-content;
+}
+td.titulos{
+	background-color: #3CDBD3;
+	color: white;
+}
+tr a img{
+	height: 30px ;
+	width: 30px;
+}
+table td{
+	height: 5vh;
 }
 table tr{
+	
 	border: 1px solid #ccc;
     padding: 4px;
-}
-table thead{
-	background-color: #2E2E2E;
-    color: white;
-    font-size: 1.5em;
 }
 
 table th{
@@ -124,4 +139,54 @@ table th{
 	background-color: red;
     padding: 10px;
     text-align: center;
+}
+.contenedor-tablas input[type='CHECKBOX']{
+	height: 30px;
+	width: 30px;
+	background-color: red;
+}
+
+ input[type="button"],input[type="submit"]{
+	border: none;
+	padding: 8px ;
+	width: 100px;
+	border-radius: 16px;
+	color: white;
+	height: 40px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+input[type="name"],input[type="number"]{
+	width: 180px;
+	padding: 8px ;
+}
+select{
+	width: 200px;
+	padding: 8px ;
+}
+input[type="button"].delete,
+input[type="submit"].delete,
+input[type="button"].insert,
+input[type="submit"].insert
+{
+
+	background-color: #3CDBD3;
+}
+
+input[type="button"].volver{
+
+	 background-color: #c7cfc8	;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover
+{
+	filter: brightness(80%);
+	transform: translateY(-2px);
+}
+
+.contenedor-crear table{
+    width: 30vw; 
+	border: unset;
+
 }

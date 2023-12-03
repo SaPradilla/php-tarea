@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Actualizar Nota</title>
+		<link rel="stylesheet" href="../css/style.css">
 	</head>
 	<body>
 		<?php
@@ -12,13 +13,10 @@
             $resultado=mysqli_query($link,$sql);
             $row = mysqli_fetch_array($resultado);
 		?>
-			<div>
-				<h2>Actualizar Nota</h2>
-
-				<form method="POST" action="actualizar_nota.php">
-
+			<form method="POST" action="actualizar_nota.php">
+				<div class="contenedor-crear">
+					<h1>Actualizar Nota</h1>
                     <input type="hidden" name="id" value="<?= $row['Ca1_Cod_curso']?>">
-
 					<table>
 					<tr><td>Codigo De Curso: </td>
 						<td><select name="ca1_cod_curso">
@@ -61,9 +59,12 @@
 						</td></tr>
 
 					</table>
-					<input type="submit" name="submit" value="Editar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_notas.php'">
-				</form>
-			</div>
+					<div class="botones">
+						<input type="submit" class="insert" name="submit" value="Actualizar">
+						<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_notas.php'">
+					</div>
+
+				</div>
+			</form>
 	</body>
 </html>

@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Insertar Cursos</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -55,56 +57,62 @@
 		{
 		?>
 			<div>
-				<h2>Insertar Curso</h2>
 				<form method="POST" action="insertar_cursos.php">
-					<table>
-
-						<tr><td>Nombre Del Curso: </td>
-						<td><input type="name" name="nom_cur"
-
-							<?php
-
-								if(isset($_POST['submit']))
-									print("value= '$nom_cur'>");
-								else
-									print(">");
-								if($errores["nom"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["nom"]."</SPAN>");
-							?>
-						</td></tr>
-
-						<tr><td>Codigo Del Curso: </td>
-						<td><input type="name" name="cod_curso"
-
-							<?php
-
-								if(isset($_POST['submit']))
-									print("value= '$cod_curso'>");
-								else
-									print(">");
-								if($errores["cod"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["cod"]."</SPAN>");
-							?>
-						</td></tr>
-
-						<tr><td>Codigo Del Profesor: </td>
-						<td><select name="ca_cod_pro">
-
-							<?php
-								require ('conexion.php');
-								$query= "SELECT * FROM profesores ORDER BY Cod_pro";
-								$resultado= mysqli_query($link,$query);
-
-								while($extraido= mysqli_fetch_array($resultado))
-								{
-									echo "<option value='$extraido[Cod_pro]'>$extraido[Cod_pro]</option>";
-								}
-							?>
-							</select></td></tr>
-
-					</table>
-					<input type="submit" name="submit" value="Insertar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_cursos.php'">
+					<div class="contenedor-crear">
+						
+						<h1>Insertar Curso</h1>
+						<table>
+	
+							<tr><td>Nombre Del Curso: </td>
+							<td><input type="name" name="nom_cur"
+	
+								<?php
+	
+									if(isset($_POST['submit']))
+										print("value= '$nom_cur'>");
+									else
+										print(">");
+									if($errores["nom"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["nom"]."</SPAN>");
+								?>
+							</td></tr>
+	
+							<tr><td>Codigo Del Curso: </td>
+							<td><input type="name" name="cod_curso"
+	
+								<?php
+	
+									if(isset($_POST['submit']))
+										print("value= '$cod_curso'>");
+									else
+										print(">");
+									if($errores["cod"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["cod"]."</SPAN>");
+								?>
+							</td></tr>
+	
+							<tr><td>Codigo Del Profesor: </td>
+							<td><select name="ca_cod_pro">
+	
+								<?php
+									require ('../conexion.php');
+									$query= "SELECT * FROM profesores ORDER BY Cod_pro";
+									$resultado= mysqli_query($link,$query);
+	
+									while($extraido= mysqli_fetch_array($resultado))
+									{
+										echo "<option value='$extraido[Cod_pro]'>$extraido[Cod_pro]</option>";
+									}
+								?>
+								</select></td></tr>
+	
+						</table>
+						<div class="botones">
+	
+							<input type="submit" class="insert" name="submit" value="Insertar">
+							<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_cursos.php'">
+						</div>
+					</div>
 				</form>
 			</div>
 		<?php

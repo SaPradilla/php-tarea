@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Insertar Centros</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -87,8 +89,10 @@
 
 		?>
 		<div>
-			<h2>Insertar Centro</h2>
+			
 			<form method="POST" action="insertar_centros.php">
+			<div class="contenedor-crear">
+				<h1>Insertar Centro</h1>
 				<table>
 					<tr><td>Nombre: </td>
 					<td><input type="name" name="nombre"
@@ -151,8 +155,12 @@
 					</td></tr>
 
 				</table>
-				<input type="submit" name="submit" value="Insertar">
-				<input type="button" name="back" value="Volver" onclick="window.location.href='lista_centros.php'">				
+				<div class="botones">
+					<input type="submit" class="insert" name="submit" value="Insertar">
+					<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_centros.php'">
+				</div>
+			</div>
+		
 			</form>
 		</div>
 		<?php

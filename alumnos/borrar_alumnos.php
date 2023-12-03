@@ -2,6 +2,8 @@
 	<html>
 	<head>
 		<title>Borrar Alumnos</title>
+		<link rel="stylesheet" href="../css/style.css">
+		
 	</head>
 	<body>
 		<?php
@@ -29,30 +31,38 @@
 
 		<div>
 			<form method="POST" action="borrar_alumnos.php">
-				<table border="1">
-					<tr align="center"><td>X</td>
-					<td>Codigo</td>
-					<td>Nombre</td>
-					<td>Telefono</td>
-					<td>Direccion</td>
-					<td>Codigo Curso</td></tr>
-						<?php 
-							require('../conexion.php');
-							$query="SELECT * FROM alumnos ORDER BY Cod_alum";
-							$resultado= mysqli_query($link,$query);
+				<div class="contenedor-tablas">
+					<h1>Alumnos</h1>
+					<table>
+						<td class="titulos">X</td>
+						<td class="titulos">Codigo</td>
+						<td class="titulos">Nombre</td>
+						<td class="titulos">Telefono</td>
+						<td class="titulos">Direccion</td>
+						<td class="titulos">Codigo Curso</td>
+							<?php 
+								require('../conexion.php');
+								$query="SELECT * FROM alumnos ORDER BY Cod_alum";
+								$resultado= mysqli_query($link,$query);
+	
+								while ($extraido=mysqli_fetch_array($resultado)) {
+									echo "<tr align='center'> <td><input type='CHECKBOX' name='borrar[]' value='".$extraido['Cod_alum']."'></td>";
+									echo "<td>".$extraido['Cod_alum']."</td>";
+									echo "<td>".$extraido['Nom_com_alu']."</td>";
+									echo "<td>".$extraido['Tlf_alum']."</td>";
+									echo "<td>".$extraido['Direc_alum']."</td>";
+									echo "<td>".$extraido['Ca_Cod_curso']."</td></tr>";
+								}
+							?>
+					</table>
 
-							while ($extraido=mysqli_fetch_array($resultado)) {
-								echo "<tr align='center'> <td><input type='CHECKBOX' name='borrar[]' value='".$extraido['Cod_alum']."'></td>";
-								echo "<td>".$extraido['Cod_alum']."</td>";
-								echo "<td>".$extraido['Nom_com_alu']."</td>";
-								echo "<td>".$extraido['Tlf_alum']."</td>";
-								echo "<td>".$extraido['Direc_alum']."</td>";
-								echo "<td>".$extraido['Ca_Cod_curso']."</td></tr>";
-							}
-						?>
-				</table>
-				<input type="submit" name="eliminar" value="Eliminar">
-				<input type="button" name="back" value="Volver" onclick="window.location.href='lista_alumnos.php'">
+					<div class="botones">
+	
+						<input type="submit" class="delete" name="eliminar" value="Eliminar">
+						<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_alumnos.php'">
+	
+					</div>
+				</div>
 			</form>
 		</div>
 		<?php 

@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Insertar Personal</title>
+		<link rel="stylesheet" href="../css/style.css">
+
 	</head>
 	<body>
 		<?php
@@ -110,126 +112,132 @@
 		{
 		?>
 			<div>
-				<h2>Insertar Personal</h2>
 				<form method="POST" action="insertar_personal.php">
-					<table>
+					<div class="contenedor-crear">
+							
+						<h1>Insertar Personal</h1>
+						<table>
 
-						<tr><td>Codigo Personal: </td>
-						<td><input type="name" name="cod_per"
+							<tr><td>Codigo Personal: </td>
+							<td><input type="name" name="cod_per"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$cod_per'>");
-								else
-									print(">");
-								if($errores["cod"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["cod"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$cod_per'>");
+									else
+										print(">");
+									if($errores["cod"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["cod"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>Nombre: </td>
-						<td><input type="name" name="nom_com"
+							<tr><td>Nombre: </td>
+							<td><input type="name" name="nom_com"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$nom_com'>");
-								else
-									print(">");
-								if($errores["nom"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["nom"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$nom_com'>");
+									else
+										print(">");
+									if($errores["nom"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["nom"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>Telefono: </td>
-						<td><input type="name" name="tlf_per"
+							<tr><td>Telefono: </td>
+							<td><input type="name" name="tlf_per"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$tlf_per'>");
-								else
-									print(">");
-								if($errores["tel"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["tel"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$tlf_per'>");
+									else
+										print(">");
+									if($errores["tel"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["tel"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>Direccion: </td>
-						<td><input type="name" name="direccion"
+							<tr><td>Direccion: </td>
+							<td><input type="name" name="direccion"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$direccion'>");
-								else
-									print(">");
-								if($errores["dir"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["dir"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$direccion'>");
+									else
+										print(">");
+									if($errores["dir"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["dir"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>Puesto: </td>
-						<td><input type="name" name="puesto_per"
+							<tr><td>Puesto: </td>
+							<td><input type="name" name="puesto_per"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$puesto_per'>");
-								else
-									print(">");
-								if($errores["pue"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["pue"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$puesto_per'>");
+									else
+										print(">");
+									if($errores["pue"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["pue"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>Salario: </td>
-						<td><input type="name" name="salario_per"
+							<tr><td>Salario: </td>
+							<td><input type="name" name="salario_per"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$salario_per'>");
-								else
-									print(">");
-								if($errores["sal"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["sal"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$salario_per'>");
+									else
+										print(">");
+									if($errores["sal"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["sal"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>Formacion: </td>
-						<td><input type="name" name="formacion"
+							<tr><td>Formacion: </td>
+							<td><input type="name" name="formacion"
 
-							<?php
+								<?php
 
-								if(isset($_POST['submit']))
-									print("value= '$formacion'>");
-								else
-									print(">");
-								if($errores["for"] != "")
-									print("<BR><SPAN CLASS= 'error'>".$errores["for"]."</SPAN>");
-							?>
-						</td></tr>
+									if(isset($_POST['submit']))
+										print("value= '$formacion'>");
+									else
+										print(">");
+									if($errores["for"] != "")
+										print("<BR><SPAN CLASS= 'error'>".$errores["for"]."</SPAN>");
+								?>
+							</td></tr>
 
-						<tr><td>CIF: </td>
-						<td><select name="ca_cif">
+							<tr><td>CIF: </td>
+							<td><select name="ca_cif">
 
-							<?php
-								require ('../conexion.php');
-								$query= "SELECT * FROM centros ORDER BY CIF";
-								$resultado= mysqli_query($link,$query);
+								<?php
+									require ('../conexion.php');
+									$query= "SELECT * FROM centros ORDER BY CIF";
+									$resultado= mysqli_query($link,$query);
 
-								while($extraido= mysqli_fetch_array($resultado))
-								{
-									echo "<option value='$extraido[CIF]'>$extraido[CIF]</option>";
-								}
-							?>
-							</select></td></tr>
+									while($extraido= mysqli_fetch_array($resultado))
+									{
+										echo "<option value='$extraido[CIF]'>$extraido[CIF]</option>";
+									}
+								?>
+								</select></td></tr>
 
-					</table>
-					<input type="submit" name="submit" value="Insertar">
-					<input type="button" name="back" value="Volver" onclick="window.location.href='lista_personal.php'">
+						</table>
+						<div class="botones">
+							<input type="submit" class="insert" name="submit" value="Insertar">
+							<input type="button" class="volver" name="back" value="Volver" onclick="window.location.href='lista_personal.php'">
+						</div>
+					</div>
+
 				</form>
 			</div>
 		<?php
